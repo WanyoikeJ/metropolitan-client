@@ -107,8 +107,39 @@
                                             <h3 class="text-lg font-medium leading-6 text-gray-900 dark:text-white">Personal
                                                 Information</h3>
                                             <p class="mt-1 text-sm text-gray-600 dark:text-gray-500">
-                                                Use a permanent address where you can receive mail.
+                                                Inline with the cooperative principals, our membership is open to all persons.
                                             </p>
+
+                                            <div class="flow-root mt-4">
+                                                <ul>
+                                                    <li v-for="(rq, i) in requiredfiles" :key="i">
+                                                        <div class="relative pb-3">
+                                                            <div class="relative flex items-center space-x-3">
+                                                                <div>
+                                                                    <div class="relative px-1">
+                                                                        <div
+                                                                            class="h-5 w-5 border border-orange-600 dark:border-gray-400 p-1 rounded-full flex items-center justify-center">
+                                                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                                                                class="text-orange-600 dark:text-gray-400 w-3 h-3">
+                                                                                <path fill-rule="evenodd"
+                                                                                    d="M16.707 5.293a1 1 0 0 1 0 1.414l-8 8a1 1 0 0 1-1.414 0l-4-4a1 1 0 0 1 1.414-1.414L8 12.586l7.293-7.293a1 1 0 0 1 1.414 0z"
+                                                                                    clip-rule="evenodd"></path>
+                                                                            </svg></div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="min-w-0 flex-1 py-0">
+                                                                    <div class="text-gray-700 dark:text-gray-400 text-sm">
+                                                                        <p>{{rq.name}}</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+
+
+
                                         </div>
                                     </div>
                                     <div class="mt-5 md:mt-0 md:col-span-2">
@@ -166,10 +197,9 @@
                                 <div class="md:grid md:grid-cols-3 md:gap-6">
                                     <div class="md:col-span-1">
                                         <div class="px-4 sm:px-0">
-                                            <h3 class="text-lg font-medium leading-6 text-gray-900 dark:text-white">Rejoining
-                                                The Sacco ?</h3>
+                                            <h3 class="text-lg font-medium leading-6 text-gray-900 dark:text-white">Rejoining The Sacco ?</h3>
                                             <p class="mt-1 text-sm text-gray-600 dark:text-gray-500">
-                                                Decide which communications you'd like to receive and how.
+                                                Are you a New member or rejoining the SACCO
                                             </p>
                                         </div>
                                     </div>
@@ -185,7 +215,7 @@
                                                                     class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
                                                                 <label for="push-everything"
                                                                     class="ml-3 block text-sm font-medium text-gray-700 dark:text-gray-400">
-                                                                    Everything
+                                                                    Yes, its my first time
                                                                 </label>
                                                             </div>
                                                             <div class="flex items-center">
@@ -193,15 +223,7 @@
                                                                     class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
                                                                 <label for="push-email"
                                                                     class="ml-3 block text-sm font-medium text-gray-700 dark:text-gray-400">
-                                                                    Same as email
-                                                                </label>
-                                                            </div>
-                                                            <div class="flex items-center">
-                                                                <input id="push-nothing" name="push-notifications" type="radio"
-                                                                    class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
-                                                                <label for="push-nothing"
-                                                                    class="ml-3 block text-sm font-medium text-gray-700 dark:text-gray-400">
-                                                                    No push notifications
+                                                                    No, i had an account before
                                                                 </label>
                                                             </div>
                                                         </div>
@@ -246,6 +268,12 @@ export default {
                 {name:'Minors'},
                 {name:'Commissions'},
             ],
+            requiredfiles:[
+                {name: 'A passsport photo'},
+                {name: 'A copy of your National Identification Card'},
+                {name: 'Kshs. 1000 membership fee'},
+                {name: 'Recent payslip for the employed'},
+            ]
         };
     },
     async asyncData({ params, app, route }) {

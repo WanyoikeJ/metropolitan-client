@@ -29,7 +29,7 @@
                 <div class="flex flex-col lg:flex-row" v-if="banking.length">
                     <div class="w-full pt-8 lg:pt-16">
                         <p class="text-center text-xl font-semibold text-gray-700 dark:text-gray-400 mb-4">Banking (Front Office)</p>
-                        <div class="grid grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-4">
+                        <div class="grid grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-12">
                             <div class="col-span-1" v-for="dw in banking" :key="dw.id">
                                 <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 dark:border-gray-700 border-dashed rounded-md">
                                     <div class="space-y-1 text-center">
@@ -40,9 +40,9 @@
                                             <p>{{dw.name}}</p>
                                         </div>
                                         <p class="text-xs">
-                                            <label for="file-upload" class="relative cursor-pointer bg-white dark:bg-gray-900 rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
+                                            <a :href="`/files/${dw.file}`" target="_blank" for="file-upload" class="relative cursor-pointer bg-white dark:bg-gray-900 rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
                                                 <span>Download</span>
-                                            </label>
+                                            </a>
                                         </p>
                                     </div>
                                 </div>
@@ -60,7 +60,7 @@
                 <div class="flex flex-col lg:flex-row" v-if="saving.length">
                     <div class="w-full pt-2 lg:pt-3">
                         <p class="text-center text-xl font-semibold text-gray-700 dark:text-gray-400 mb-4">Savings & Loans (Back Office)</p>
-                        <div class="grid grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-4">
+                        <div class="grid grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-12">
                             <div class="col-span-1" v-for="dw in saving" :key="dw.id">
                                 <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 dark:border-gray-700 border-dashed rounded-md">
                                     <div class="space-y-1 text-center">
@@ -71,9 +71,9 @@
                                             <p>{{dw.name}}</p>
                                         </div>
                                         <p class="text-xs">
-                                            <label for="file-upload" class="relative cursor-pointer bg-white dark:bg-gray-900 rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
+                                            <a :href="`/files/${dw.file}`" target="_blank" for="file-upload" class="relative cursor-pointer bg-white dark:bg-gray-900 rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
                                                 <span>Download</span>
-                                            </label>
+                                            </a>
                                         </p>
                                     </div>
                                 </div>
@@ -94,16 +94,26 @@ export default {
         return{
             data: [],
             category: null,
+            serching: null
         }
     },
     computed: {
-        banking(){
+        filteredDownloads(){
+            var self = this
+            if (this.serching == null) {
+                return this.category.downloads
+            }
             return this.category.downloads.filter(function(faq){
+                return faq.name.toLowerCase().indexOf(self.serching) >=0
+            });
+        },
+        banking(){
+            return this.filteredDownloads.filter(function(faq){
                 return faq.grouping == true
             });
         },
         saving(){
-            return this.category.downloads.filter(function(faq){
+            return this.filteredDownloads.filter(function(faq){
                 return faq.grouping == false
             });
         },

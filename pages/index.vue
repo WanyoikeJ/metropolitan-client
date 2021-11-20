@@ -32,16 +32,14 @@
 
                         <div class="relative">
                             <img src="/images/mission.jpg" class="relative w-full lg:-mt-16 z-10" alt="">
-                            <div class="z-0 filter blur-xl absolute top-8 right-8 w-full h-full bg-cover transform scale-90 transition-opacity duration-500 opacity-80" style="background-image: url('/images/mission.jpg'); "></div>
+                            <div class="z-0 filter blur-xl absolute top-8 right-8 w-full h-full bg-cover transform scale-90 transition-opacity duration-500 opacity-60" style="background-image: url('/images/mission.jpg'); "></div>
                         </div>
 
-                        <!-- <img src="/images/mission.jpg" class="w-full shadow-lg lg:-mt-16"> -->
                     </div>
                     <div class="w-full pr-20 relative">
                         <img src="/images/vision.jpg" class="relative w-full -mt-5 lg:-mt-16 z-10" alt="">
-                        <div class="z-0 filter blur-xl absolute top-8 right-10 w-full h-full bg-cover transform scale-90 transition-opacity duration-500 opacity-80" style="background-image: url('/images/vision.jpg');"></div>
+                        <div class="z-0 filter blur-xl absolute top-6 right-7 w-full h-full bg-cover transform scale-90 transition-opacity duration-500 opacity-60" style="background-image: url('/images/vision.jpg');"></div>
 
-                        <!-- <img src="/images/vision.jpg" class="w-full shadow-lg -mt-5 lg:-mt-16"> -->
                     </div>
                 </div>
                 <div class="w-full lg:w-1/2 flex flex-wrap items-center lg:pl-20 pt-16 lg:pt-28">
@@ -125,7 +123,7 @@
                 <div class="w-full lg:w-1/2 flex flex-wrap items-center justify-end lg:pl-16">
                     <div class="w-full relative">
                         <img src="/images/objective.jpg" class="relative w-full z-10" alt="">
-                        <div class="z-0 filter blur-xl absolute top-5 right-5 w-full h-full bg-cover transform scale-90 transition-opacity duration-500 opacity-80" style="background-image: url('/images/objective.jpg');"></div>
+                        <div class="z-0 filter blur-xl absolute top-5 right-5 w-full h-full bg-cover transform scale-90 transition-opacity duration-500 opacity-60" style="background-image: url('/images/objective.jpg');"></div>
 
                     </div>
                     <!-- <img src="/images/objective.jpg" class="w-full"> -->

@@ -6,6 +6,20 @@ module.exports = {
             'sans': ['Montserrat', 'sans-serif'],
         },
         extend: {
+            keyframes: {
+                slidein: {
+                    '0%': {
+                        transform: 'translate3d(100%, 0, 0)',
+                        visibility: 'visible'
+                    },
+                    'to': {
+                        transform: 'translateZ(0)',
+                    }
+                }
+            },
+            animation: {
+                slidein: 'slidein 500ms ease-in-out',
+            },
             padding: {
                 '19': '4.6rem',
                 '15': '3.8rem'

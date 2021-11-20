@@ -11,7 +11,11 @@ export default {
             { name: 'format-detection', content: 'telephone=no' }
         ],
         link: [
-            { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+            { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+        ],
+        script: [
+            { src: '/js/jquery.min.js', body: true },
+            { src: '/js/jquery.fancybox.min.js', body: true },
         ]
     },
 
@@ -21,7 +25,9 @@ export default {
     loading: { color: '#3D4290', height: '5px' },
 
     // Global CSS: https://go.nuxtjs.dev/config-css
-    css: [],
+    css: [
+        '~/assets/css/jquery.fancybox.min.css',
+    ],
 
     // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
     plugins: [
